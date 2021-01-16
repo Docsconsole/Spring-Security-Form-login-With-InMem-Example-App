@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class HomeController {
+public class LoginController {
 
     @GetMapping(value = {"/"})
     public String welcome(ModelMap model) {
@@ -32,7 +32,7 @@ public class HomeController {
                             @RequestParam(value = "logout", required = false) String logout) {
 
         if (error != null) {
-            model.addAttribute("error", "Invalid Credentials provided.");
+            model.addAttribute("error", "Credentials are invalid.");
         }
         if (logout != null) {
             model.addAttribute("message", "Logged out successfully.");
@@ -41,9 +41,9 @@ public class HomeController {
     }
     @GetMapping(value = "/accessDenied")
     public String accessDenied(ModelMap model) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (!(auth instanceof AnonymousAuthenticationToken)) {
-            UserDetails userDetail = (UserDetails) auth.getPrincipal();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            UserDetails userDetail = (UserDetails) authentication.getPrincipal();
             System.out.println(userDetail);
 
             model.addAttribute("username", userDetail.getUsername());
