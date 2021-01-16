@@ -19,12 +19,17 @@ public class LoginController {
 
     @GetMapping(value = {"/home"})
     public String home(ModelMap model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetail = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("username", userDetail.getUsername());
         return "home";
     }
 
     @GetMapping(value = {"/admin"})
     public String admin(ModelMap model) {
-        return "admin";
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetail = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("username", userDetail.getUsername());return "admin";
     }
 
     @GetMapping(value = {"/login"})
@@ -44,8 +49,6 @@ public class LoginController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
             UserDetails userDetail = (UserDetails) authentication.getPrincipal();
-            System.out.println(userDetail);
-
             model.addAttribute("username", userDetail.getUsername());
 
         }

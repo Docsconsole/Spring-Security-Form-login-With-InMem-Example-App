@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.docsconsole.tutorials.springmvc5</groupId>
-	<artifactId>Spring-Security-Form-login-With-InMem-Example-AppNew</artifactId>
+	<artifactId>Spring-Security-Form-login-With-InMem-Example-App</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>Spring-Security-Form-login-With-InMem-Example-AppNew</name>
-	<description>Spring-Security-Form-login-With-InMem-Example-AppNew</description>
+	<name>Spring-Security-Form-login-With-InMem-Example-App</name>
+	<description>Spring-Security-Form-login-With-InMem-Example-App</description>
 
 	<properties>
 		<springframework.version>5.3.2</springframework.version>

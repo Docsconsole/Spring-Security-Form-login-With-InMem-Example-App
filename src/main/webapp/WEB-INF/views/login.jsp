@@ -1,10 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <body onload='document.loginForm.username.focus();'>
-	<h3>Docsconsole Tutorials</h3>
 
-	<c:if test="${not empty error}"><div>${error}</div></c:if>
-	<c:if test="${not empty message}"><div>${message}</div></c:if>
+<h2 style="color: #38b5bb;">Demonstration for Spring Security Form login</h2>
+
+	<c:if test="${not empty error}"><div style="color: #38b5bb;">${error}</div></c:if>
+	<c:if test="${not empty message}"><div style="color: #38b5bb;">${message}</div></c:if>
 
 	<form name='login' action="<c:url value='/login' />" method='POST'>
 		<table>

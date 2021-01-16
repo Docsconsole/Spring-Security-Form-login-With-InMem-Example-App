@@ -1,11 +1,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<h3>Docsconsole Tutorials</h3>
 
+<h2 style="color: #38b5bb;">Demonstration for Spring Security Form login</h2>
+<h2 style="color: #38b5bb;">Hello ${username}: Welcome to HomePage</h2>
 
 <c:url value="/logout" var="logoutUrl" />
 <form id="logout" action="${logoutUrl}" method="post" >
   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
 <c:if test="${pageContext.request.userPrincipal.name != null}">
-	<a href="javascript:document.getElementById('logout').submit()">Logout</a>
+	<a href="javascript:document.getElementById('logout').submit()">Click here for logout</a>
 </c:if>

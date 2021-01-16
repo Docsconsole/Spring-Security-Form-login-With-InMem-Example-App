@@ -2,16 +2,16 @@
 <html>
 <body>
 
-<h3>Access is denied</h3>
+<h2>Demonstration for Spring Security Form login</h2>
 <c:url value="/logout" var="logoutUrl" />
 <form id="logout" action="${logoutUrl}" method="post" >
   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
   <c:choose>
   		<c:when test="${empty username}">
-  			<h3>You do not have permission to access this page!</h3>
+  			<h3 style="color: #38b5bb;">Permission is required for Accessing.</h3>
   		</c:when>
   		<c:otherwise>
-  			<h3>Username : ${username} <br/>You do not have permission to access this page!</h3>
+  			<h3 style="color: #38b5bb;">Hi <span>${username}<span>, permission is required for Accessing.</h3>
   		</c:otherwise>
   	</c:choose>
 </form>

@@ -1,6 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<h3>DocsConsole Tutorials</h3>
 
+<h2>Demonstration for Spring Security Form login</h2>
+<h2>Hello <span>${username}<span>: Welcome to admin</h2>
 
 <c:url value="/logout" var="logoutUrl" />
 <form id="logout" action="${logoutUrl}" method="post" >
